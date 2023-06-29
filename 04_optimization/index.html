@@ -5,6 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preload" href="fonts/MontserratBold.woff2" as="font">
+  <link rel="preload" href="fonts/MontserratRegular.woff2" as="font">
+  <link rel="preload" href="fonts/MontserratSemiBold.woff2" as="font">
+  <link rel="preload" href="fonts/MontserratMedium.woff2" as="font">
+  <link rel="preload" href="fonts/MontserratExtraBold.woff2" as="font">
+
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/media.css">
@@ -117,7 +124,7 @@
             Мы&nbsp;вынуждены отталкиваться от&nbsp;того, что высококачественный прототип будущего проекта способствует
             повышению качества экспериментов.</p>
           <div class="aboutus__imgblock">
-            <img src="img/aboutas_back1.png" alt="aboutus_picture">
+            <img class="lazyload" data-src="img/aboutas_back1.webp" alt="aboutus_picture">
           </div>
           <ul aria-label="карточки" class="aboutus__items items list-reset flex">
             <li aria-label="карточка 1" class="items__item flex">
@@ -486,6 +493,7 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/accordion-js@3.3.2/dist/accordion.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
   <script src="./js/script.js"></script>
 </body>
 
