@@ -1,4 +1,4 @@
-const { src, dest, series, watch} = require('gulp');
+const { src, dest, series, watch } = require('gulp');
 const concat = require('gulp-concat');
 const htmlMin = require('gulp-htmlmin');
 const autoprefixer = require('gulp-autoprefixer');
@@ -26,43 +26,43 @@ const clean = () => {
 
 const resources = () => {
   return src('src/resources/**')
-  .pipe(dest('dist'))
+    .pipe(dest('dist'))
 }
 
 const styles = () => {
   return src('src/styles/**/*.css')
-  .pipe(gulpif(!isProd, sourcemaps.init()))
-  .pipe(concat('main.css'))
-  .pipe(autoprefixer({
-    cascade: false
-  }))
-  .pipe(cleanCSS({
-    level: 2
-  }))
-  .pipe(gulpif(!isProd, sourcemaps.write()))
-  .pipe(dest('dist'))
-  .pipe(gulpif(!isProd, browserSync.stream()))
+    .pipe(gulpif(!isProd, sourcemaps.init()))
+    .pipe(concat('main.css'))
+    .pipe(autoprefixer({
+      cascade: false
+    }))
+    .pipe(cleanCSS({
+      level: 2
+    }))
+    .pipe(gulpif(!isProd, sourcemaps.write()))
+    .pipe(dest('dist'))
+    .pipe(gulpif(!isProd, browserSync.stream()))
 }
 
 const htmlMinify = () => {
   return src('src/**/*.html')
-  .pipe(gulpif(isProd, htmlMin({
-    collapseWhitespace: true
-  })))
-  .pipe(dest('dist'))
-  .pipe(gulpif(!isProd, browserSync.stream()))
+    .pipe(gulpif(isProd, htmlMin({
+      collapseWhitespace: true
+    })))
+    .pipe(dest('dist'))
+    .pipe(gulpif(!isProd, browserSync.stream()))
 }
 
 const svgSprites = () => {
   return src('src/images/svg/**/*.svg')
-  .pipe(svgSprite({
-    mode: {
-      stack: {
-        sprite: '../sprite.svg'
+    .pipe(svgSprite({
+      mode: {
+        stack: {
+          sprite: '../sprite.svg'
+        }
       }
-    }
-  }))
-  .pipe(dest('dist/images'))
+    }))
+    .pipe(dest('dist/images'))
 }
 
 const scripts = () => {
@@ -70,17 +70,17 @@ const scripts = () => {
     'src/js/components/**/*.js',
     'src/js/main.js'
   ])
-  .pipe(gulpif(!isProd, sourcemaps.init()))
-  .pipe(babel({
-    presets: ['@babel/env']
-  }))
-  .pipe(concat('app.js'))
-  .pipe(uglify({
-    toplevel: true,
-  }).on('error', notify.onError()))
-  .pipe(gulpif(!isProd, sourcemaps.write()))
-  .pipe(dest('dist'))
-  .pipe(gulpif(!isProd, browserSync.stream()))
+    .pipe(gulpif(!isProd, sourcemaps.init()))
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
+    .pipe(concat('app.js'))
+    .pipe(uglify({
+      toplevel: true,
+    }).on('error', notify.onError()))
+    .pipe(gulpif(!isProd, sourcemaps.write()))
+    .pipe(dest('dist'))
+    .pipe(gulpif(!isProd, browserSync.stream()))
 }
 
 const images = () => {
@@ -90,8 +90,8 @@ const images = () => {
     'src/images/*.svg',
     'src/images/**/*.jpeg'
   ])
-  .pipe(image())
-  .pipe(dest('dist/images'))
+    .pipe(image())
+    .pipe(dest('dist/images'))
 }
 
 const watchFiles = () => {
@@ -100,13 +100,12 @@ const watchFiles = () => {
       baseDir: 'dist'
     }
   })
+  watch('src/**/*.html', htmlMinify);
+  watch('src/styles/**/*.css', styles);
+  watch('src/images/svg/**/*.svg', svgSprites);
+  watch('src/js/**/*.js', scripts);
+  watch('src/resources/**', resources);
 }
-
-watch('src/**/*.html', htmlMinify);
-watch('src/styles/**/*.css', styles);
-watch('src/images/svg/**/*.svg', svgSprites);
-watch('src/js/**/*.js', scripts);
-watch('src/resources/**', resources);
 
 exports.clean = clean;
 exports.styles = styles;
