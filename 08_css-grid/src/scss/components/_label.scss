@@ -1,0 +1,15 @@
+.label {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 7px 15px;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  font-size: 14px;
+  font-weight: 400;
+
+  @include mobile {
+    padding: 5px 7px;
+    font-size: 12px;
+  }
+}
