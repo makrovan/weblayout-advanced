@@ -1,13 +1,13 @@
 .contacts {
   &__container {
-    padding-top: 70px;
+    padding-top:  2px;
     padding-bottom: 69px;
 
     @include mobile {
       padding-top: 34px;
+      // padding-left: 0;
+      // padding-right: 0;
     }
-
-    @include mobile
   }
 
   &__header {
@@ -44,7 +44,7 @@
     }
   }
 
-  &__grids--left {
+  &__grids-left {
     grid-column: 1 / 8 span;
     position: relative;
 
@@ -58,10 +58,12 @@
 
     @include mobile {
       grid-column: 1 / 2 span;
+      margin-left: -21px;
+      margin-right: -21px;
     }
   }
 
-  &__grids--right {
+  &__grids-right {
     grid-column: 9 / 4 span;
 
     @include high-desktop {
@@ -98,6 +100,11 @@
       height: 157px;
       width: 100%;
       flex-direction: row-reverse;
+    }
+
+    @include mobile {
+      padding-left: 21px;
+      padding-right: 21px;
     }
   }
 

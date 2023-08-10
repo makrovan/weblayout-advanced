@@ -25,12 +25,12 @@
 
 .form__input {
   @include hover {
-    border: 1px solid var(--orange-color);
+    outline: 1px solid var(--orange-color);
   }
 }
 
 .just-validate-error-field {
-  border: 1px solid var(--pink-color);
+  outline: 1px solid var(--pink-color);
 }
 
 .just-validate-error-label {

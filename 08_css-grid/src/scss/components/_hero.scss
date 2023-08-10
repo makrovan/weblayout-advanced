@@ -1,10 +1,9 @@
 .hero {
-  // margin-top: var(--header-row);
 
   &__container {
     padding: 41px 0 68px;
     grid-template-columns: repeat(auto-fit, minmax(278px, 1fr));
-    // grid-template-rows: 630px;
+    // grid-template-columns: repeat(2, 1fr);
 
     @include high-desktop {
       padding-top: 34px;
@@ -17,6 +16,7 @@
   }
 
   &__left {
+    height: 100%;
     @include image-set("../../img/hero_bg");
     @include bg-cover;
     position: relative;
@@ -32,7 +32,7 @@
     }
   }
 
-  &__header {
+  &__subheader {
     margin: 0;
     margin-bottom: 19px;
     color: var(--light-color);
@@ -86,7 +86,7 @@
     }
   }
 
-  &__subheader {
+  &__header {
     margin: 0;
     margin-bottom: 16px;
     color: var(--dark-color);
@@ -112,36 +112,55 @@
   }
 
   &__photos {
-    min-height: 100%;
+    font-size: 0;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 300px 257px;
+
+    // @include high-desktop {
+    //   grid-template-rows: 332px 186px;
+    // }
+
+    // @include mid-tablet {
+    //   grid-template-rows: 229px 133px;
+    // }
+
+    // @include mobile {
+    //   grid-template-rows: 186px 104px;
+    // }
+  }
+
+  &__image {
+    height: 257px;
 
     @include high-desktop {
-      grid-template-rows: 332px 186px;
+      height: 186px;
     }
 
     @include mid-tablet {
-      grid-template-rows: 229px 133px;
+      height: 133px;
     }
 
     @include mobile {
-      grid-template-rows: 186px 104px;
+      height: 104px;
+    }
+  }
+
+  &__image--large {
+    height: 300px;
+
+    @include high-desktop {
+      height: 332px;
+    }
+
+    @include mid-tablet {
+      height: 229px;
+    }
+
+    @include mobile {
+      height: 186px;
     }
   }
 
   &__photo1 {
-    grid-column: 1 / 2 span;
-    @include image-set("../../img/hero_ph1");
-    @include bg-cover;
-  }
-
-  &__photo2 {
-    @include image-set("../../img/hero_ph2");
-    @include bg-cover;
-  }
-
-  &__photo3 {
-    @include image-set("../../img/hero_ph3");
-    @include bg-cover;
+    grid-column: 2 span;
   }
 }

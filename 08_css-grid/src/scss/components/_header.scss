@@ -1,13 +1,8 @@
 .header {
-  color: var(--light-color);
-
-  &__container-fluid {
-    background-color: var(--dark-color);
-  }
 
   &__container {
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: var(--header-row);
+    min-height: var(--header-row);
     align-items: center;
 
     @include high-desktop {
@@ -99,6 +94,7 @@
 .nav {
   &__list {
     justify-content: space-between;
+    flex-wrap: wrap;
 
     @include high-desktop {
       justify-content: left;
@@ -159,6 +155,35 @@
 
     &:active {
       color: var(--brown-color);
+    }
+  }
+
+  &__phone {
+    color: var(--orange-color);
+  }
+
+  &__phone-svg {
+    width: 23px;
+    height: 23px;
+    display: inline-block;
+    object-fit: cover;
+    fill: currentColor;
+    vertical-align: text-bottom;
+
+    @include mobile {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__phone-number {
+    font-family: var(--second-family);
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: -5px;
+
+    @include mobile {
+      font-size: 14px;
     }
   }
 }

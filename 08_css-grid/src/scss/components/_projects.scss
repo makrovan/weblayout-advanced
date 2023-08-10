@@ -2,9 +2,11 @@
 
   &__container {
     padding-top: 70px;
+    padding-bottom: 68px;
 
     @include mobile {
-      padding-top: 42px;
+      padding-top: 48px;
+      padding-bottom: 0;
     }
   }
 
@@ -18,28 +20,25 @@
 
     @include mobile {
       font-size: 18px;
+      margin-bottom: 17px;
     }
   }
 
   &__cards {
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 300px 300px;
 
     @include high-desktop {
       grid-template-columns: repeat(8, 1fr);
-      grid-template-rows: 286px 307px 307px;
       row-gap: 24px;
     }
 
     @include mid-tablet {
       grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: 300px 302px 307px 300px;
       row-gap: 26px
     }
 
     @include mobile {
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 303px 278px 277px 419px 300px 298px 422px;
     }
   }
 }
@@ -48,9 +47,18 @@
   @include flex;
   flex-direction: column-reverse;
   position: relative;
+  min-height: 300px;
 
   &--mini {
     grid-column: span 2;
+
+    @include high-desktop {
+      min-height: 286px;
+    }
+
+    @include mobile {
+      min-height: 300px;
+    }
   }
 
   &--mutable {
@@ -58,10 +66,12 @@
 
     @include high-desktop {
       grid-column: span 4;
+      min-height: 286px;
     }
 
     @include mid-tablet {
       grid-column: span 2;
+      min-height: 300px;
     }
   }
 
@@ -72,17 +82,21 @@
     @include high-desktop {
       grid-column-end: span 5;
       padding: 30px 30px 26px;
+      min-height: 307px;
     }
 
     @include mid-tablet {
       grid-column-end: span 6;
+      min-height: 305px;
     }
 
     @include mobile {
       grid-column-end: span 2;
+      min-height: 422px;
     }
 
     .card__content {
+      margin: 0;
       color: var(--light-color);
       max-width: 292px;
       flex-grow: 1;
@@ -114,7 +128,18 @@
     }
   }
 
+  &:nth-child(2) {
+    @include mobile {
+      min-height: 276px;
+    }
+  }
+
   &:nth-child(3) {
+
+    @include mobile {
+      min-height: 276px;
+    }
+
     .card__content {
       @include mid-tablet {
         min-height: 66px;
@@ -263,7 +288,7 @@
   }
 }
 
-.card__content--clickable {
+.card__content-clickable {
 
   &:focus {
     outline: none;

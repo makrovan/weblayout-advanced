@@ -84,6 +84,11 @@ a {
   max-width: var(--container-width);
 }
 
+.container-dark {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
 }

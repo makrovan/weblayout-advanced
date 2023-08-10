@@ -1,22 +1,40 @@
-<section class="hero">
-  <div class="container">
-    <div class="hero__container grid">
+<div class="container hero">
+  <div class="hero__container grid">
+    <section id="notice" class="hero__notice">
+      <h2 class="hero__header hidden">Анонсы</h2>
       <div class="hero__left flex">
         <div class="">
           <a href="#" class="hero__link btn btn-reset">Узнать больше</a>
         </div>
-        <h2 class="hero__header">Неоновый фотосет 2.0 7 июля 20:00</h2>
-        <p class="hero__content">Мастер-класс от Игоря Робова</p>
-        <p class="label hero__label">#мастеркласс</p>
+        <h3 class="hero__subheader">Неоновый фотосет 2.0 7 июля 20:00</h3>
+          <p class="hero__content">Мастер-класс от Игоря Робова</p>
+          <p class="label hero__label">#мастеркласс</p>
       </div>
+    </section>
+    <section id="preview" class="hero__preview">
       <div class="hero__wright">
-        <h3 class="hero__subheader">Работы участников предыдущего мастер-класса</h3>
-        <div class="hero__photos grid">
-          <div class="hero__photo1"></div>
-          <div class="hero__photo2"></div>
-          <div class="hero__photo3"></div>
-        </div>
+        <h2 class="hero__header">Работы участников предыдущего мастер-класса</h2>
+          <ul class="list-reset hero__photos grid">
+            <li class="hero__photo1">
+              <picture>
+                <source srcset="../img/hero_ph1.webp" type="image/webp">
+                <img loading="lazy" src="../img/hero_ph1.jpg" class="hero__image hero__image--large" width="630" height="300" alt="photo1">
+              </picture>
+            </li>
+            <li class="hero__photo2">
+              <picture>
+                <source srcset="../img/hero_ph2.webp" type="image/webp">
+                <img loading="lazy" src="../img/hero_ph2.jpg." class="hero__image" width="300" height="257" alt="photo2">
+              </picture>
+            </li>
+            <li class="hero__photo3">
+              <picture>
+                <source srcset="../img/hero_ph3.webp" type="image/webp">
+                <img loading="lazy" src="../img/hero_ph3.jpg" class="hero__image" width="300" height="257" alt="photo3">
+              </picture>
+            </li>
+          </ul>
       </div>
-    </div>
+    </section>
   </div>
-</section>
+</div>

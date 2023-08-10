@@ -1,6 +1,7 @@
 .btn {
   display: inline-block;
   padding: 15px 22px;
+  width: fit-content;
   color: var(--light-color);
   background-color: var(--orange-color);
   font-size: 16px;
@@ -15,7 +16,7 @@
   }
 
   @include hover {
-    border: 3px solid var(--brown-color);
+    outline: 3px solid var(--brown-color);
     background-color: var(--pink-color);
   }
 
@@ -42,7 +43,7 @@
   }
 
   @include hover {
-    border: 3px solid var(--orange-color);
+    outline: 3px solid var(--orange-color);
     background-color: var(--dark-orange-color);
   }
 
@@ -60,6 +61,10 @@
     object-fit: cover;
     fill: var(--gray-color);
     // transition: fill 0.3s ease-in-out;
+
+    @include hover {
+      fill: var(--dark-orange-color);
+    }
   }
 
   &:focus {

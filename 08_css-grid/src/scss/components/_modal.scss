@@ -1,6 +1,11 @@
 .search-modal {
   width: 342px;
   background: none;
+  overflow: hidden;
+
+  @include mobile {
+    width: 278px;
+  }
 
   &__form {
     @include flex-v-center;
