@@ -1,0 +1,43 @@
+.search-modal {
+  width: 342px;
+  background: none;
+  overflow: hidden;
+
+  @include mobile {
+    width: 278px;
+  }
+
+  &__form {
+    @include flex-v-center;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  &__label {
+    flex-grow: 1;
+  }
+
+  &__input {
+    height: 100%;
+    background: none;
+    color: var(--light-color);
+    border-bottom: 1px solid var(--light-gray-color);
+
+    @include hover {
+      border: none;
+      border-bottom: 1px solid var(--orange-color);
+    }
+  }
+
+  &__input.focus-visible::placeholder {
+    color: var(--light-gray-color);
+  }
+
+  &__input.focus-visible {
+    border-bottom: 1px solid var(--orange-color);
+  }
+
+  &__input:active {
+    border-bottom: 1px solid var(--brown-color);
+  }
+}

@@ -1,0 +1,43 @@
+.form {
+  gap: var(--offset);
+
+  &__label {
+    position: relative;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 15px 23px;
+
+    @include mobile {
+      height: 40px;
+    }
+  }
+
+  &__input:focus {
+    outline: none;
+  }
+
+  &__input.focus-visible::placeholder {
+    color: var(--orange-color);
+  }
+}
+
+.form__input {
+  @include hover {
+    outline: 1px solid var(--orange-color);
+  }
+}
+
+.just-validate-error-field {
+  outline: 1px solid var(--pink-color);
+}
+
+.just-validate-error-label {
+  position: absolute;
+  top: 3px;
+  left: 23px;
+  color: var(--pink-color);
+  font-size: 9px;
+  font-weight: 400;
+}
