@@ -13,8 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: npm run build
-        with:
-          working-directory: 08_css-grid
+        working-directory: 08_css-grid
       - uses: docker/setup-buildx-action@v3
         with:
           context: ./08_css-grid
